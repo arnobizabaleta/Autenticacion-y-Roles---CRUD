@@ -143,6 +143,7 @@
     <Content Include="Content\css\stylesCRUD.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\imgs\favicon.ico" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -185,6 +186,9 @@
     <Content Include="Views\Acceso\Registrar.cshtml" />
     <Content Include="Views\MantenimientoArticulo\Index.cshtml" />
     <Content Include="Views\MantenimientoArticulo\Create.cshtml" />
+    <Content Include="Views\MantenimientoArticulo\Details.cshtml" />
+    <Content Include="Views\MantenimientoArticulo\Edit.cshtml" />
+    <Content Include="Views\MantenimientoArticulo\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

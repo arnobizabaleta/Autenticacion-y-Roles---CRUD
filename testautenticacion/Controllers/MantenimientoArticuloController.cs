@@ -76,54 +76,58 @@ namespace testautenticacion.Controllers
 
         // GET: MantenimientoArticulo/Details/5
         public ActionResult Details(int id)
+
         {
-            return View();
+            MantenimientoArticulo ma = new MantenimientoArticulo();
+            Articulo art = ma.Recuperar(id);
+            return View(art);
         }
 
-    
 
+        [PermisosRol(Rol.Administrador)]
         // GET: MantenimientoArticulo/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewData["Codigo"] = id;//Guarde el codigo del producto para ser mostrado en la vista Edit
+            MantenimientoArticulo ma = new MantenimientoArticulo();
+            Articulo art = ma.Recuperar(id);//Mostrando los detalles del articulo a editar
+            return View(art);
         }
 
         // POST: MantenimientoArticulo/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
+          
+            MantenimientoArticulo ma = new MantenimientoArticulo();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Articulo art = new Articulo {
+                Codigo = id,
+                Descripcion = collection["descripcion"].ToString(),
+                Precio = float.Parse(collection["precio"].ToString())
+
+            };
+            //ViewData["Codigo"] = art.Codigo;
+            ma.Modificar(art);
+            return RedirectToAction("Index", "MantenimientoArticulo");
         }
 
         // GET: MantenimientoArticulo/Delete/5
+        [PermisosRol(Rol.Administrador)]
         public ActionResult Delete(int id)
         {
-            return View();
+            MantenimientoArticulo ma = new MantenimientoArticulo();
+            Articulo art = ma.Recuperar(id);//Mostrando los detalles del articulo a eliminar
+            return View(art);
         }
 
         // POST: MantenimientoArticulo/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            MantenimientoArticulo ma = new MantenimientoArticulo();
+            ma.Borrar(id);//Eliminando el articulo mediante su busqueda por Codigo
+            return RedirectToAction("Index", "MantenimientoArticulo");
         }
     }
 }
