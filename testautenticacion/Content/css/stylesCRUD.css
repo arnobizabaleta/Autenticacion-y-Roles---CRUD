@@ -1,0 +1,13 @@
+﻿body {
+    margin:20px;
+}
+
+.a-btn {
+    color: white !important;
+    text-decoration: none;
+}
+
+.a-btn:hover {
+    color: black !important;
+  
+}

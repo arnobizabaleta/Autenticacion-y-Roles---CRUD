@@ -122,10 +122,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MantenimientoArticuloController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logica\LO_Usuario.cs" />
+    <Compile Include="Models\Articulo.cs" />
+    <Compile Include="Models\MantenimientoArticulo.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Permisos\PermisosRolAttribute.cs" />
@@ -137,6 +140,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\Login.css" />
+    <Content Include="Content\css\stylesCRUD.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
@@ -179,6 +183,8 @@
     <Content Include="Views\Acceso\Index.cshtml" />
     <Content Include="Views\Home\SinPermiso.cshtml" />
     <Content Include="Views\Acceso\Registrar.cshtml" />
+    <Content Include="Views\MantenimientoArticulo\Index.cshtml" />
+    <Content Include="Views\MantenimientoArticulo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
